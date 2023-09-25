@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentMain">
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.multi.game.ui.nav.FragmentNav"
+        android:label="FragmentMain" >
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentAviaFirst"
+            app:destination="@id/fragmentAviaFirst" />
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentPlinkoSecond"
+            app:destination="@id/fragmentPlinkoSecond" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAviaFirst"
+        android:name="com.multi.game.ui.first.FragmentAviaFirst"
+        android:label="FragmentAviaFirst" >
+        <action
+            android:id="@+id/action_fragmentAviaFirst_to_fragmentGameResult"
+            app:destination="@id/fragmentGameResult" />
+        <action
+            android:id="@+id/action_fragmentAviaFirst_to_dialogPause"
+            app:destination="@id/dialogPause" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPlinkoSecond"
+        android:name="com.multi.game.ui.second.FragmentPlinkoSecond"
+        android:label="FragmentPlinkoSecond" >
+        <action
+            android:id="@+id/action_fragmentPlinkoSecond_to_fragmentGameResult"
+            app:destination="@id/fragmentGameResult" />
+        <action
+            android:id="@+id/action_fragmentPlinkoSecond_to_dialogPause"
+            app:destination="@id/dialogPause" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentGameResult"
+        android:name="com.multi.game.ui.game_result.FragmentGameResult"
+        android:label="FragmentGameResult" >
+        <argument
+            android:name="game"
+            app:argType="integer" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogPause"
+        android:name="com.multi.game.ui.dialogs.DialogPause"
+        android:label="DialogPause" />
+</navigation>
